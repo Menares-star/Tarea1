@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ordenes;
+
+message Orden{
+ string Id = 1;
+ string Producto=2;
+ int32 Valor=3;
+ string Destino=4;
+ int32 Prioridad=5;
+ int32 Codigo=6;
+}
+
+service OrdenService {
+  rpc ReceivedOrden(Orden) returns (Orden) {}
+}

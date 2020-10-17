@@ -6,7 +6,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	"github.com/tutorialedge/go-grpc-tutorial/chat"
+	"github.com/tutorialedge/go-grpc-tutorial/Mensajes"
 )
 
 func main() {
@@ -16,11 +16,11 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	s := chat.Server{}
+	s := ordenes.Server{}
 
 	grpcServer := grpc.NewServer()
 
-	chat.RegisterChatServiceServer(grpcServer, &s)
+	ordenes.RegisterOrdenServiceServer(grpcServer, &s)
 
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %s", err)
