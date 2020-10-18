@@ -12,6 +12,7 @@ package ordenes
      return &Orden{Id :"caca",
      Producto:"jabon",
      Valor:1000,
+     Tienda:"Beta",
      Destino:"casa-A",
      Prioridad:1,
      Codigo:1,}, nil

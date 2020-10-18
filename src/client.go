@@ -1,11 +1,12 @@
 package main
 
 import (
+  "os"
+  "fmt"
   "log"
-
   "golang.org/x/net/context"
   "google.golang.org/grpc"
-
+  "encoding/csv"
 	"github.com/tutorialedge/go-grpc-tutorial/Mensajes"
 )
 
@@ -18,11 +19,28 @@ func main() {
   defer conn.Close()
 
   c := ordenes.NewOrdenServiceClient(conn)
+  f,err := os.Open("pymes.csv")
+  if err != nil{
+    log.Printf("error abriendo el archivo: %v",err)
+  }
+  defer f.Close()
+
+  r := csv.NewReader(f)
+  r.Comma = ','
+  r.Comment = '#'
+  r.FieldsPerRecord = 6
+
+  rawData,err := r.ReadAll()
+  if err!= nil{
+    log.Printf("error leyendo la informacion del archivo: %v",err)
+  }
+  fmt.Println(rawData)
 
   message := ordenes.Orden{
     Id :"caca",
     Producto:"jabon",
     Valor:1000,
+    Tienda:"Beta",
     Destino:"casa-A",
     Prioridad:1,
     Codigo:0,
