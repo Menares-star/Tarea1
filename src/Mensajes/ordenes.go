@@ -12,14 +12,14 @@ var codsum int32 =0
    func (s*Server) ReceivedOrden(ctx context.Context, message *Orden)(*Orden, error){
      codsum++
      log.Printf("Received message body from client: %s", message.Id)
-     return &Orden{Id :"caca",
-     Producto:"jabon",
-     Valor:1000,
-     Tienda:"Beta",
-     Destino:"casa-A",
-     Prioridad:1,
+     return &Orden{Id :message.Id,
+     Producto:message.Producto,
+     Valor:message.Valor,
+     Tienda:message.Tienda,
+     Destino:message.Destino,
+     Prioridad:message.Prioridad,
      Codigo:codsum,
-     Tipo:"pymes"}, nil
+     Tipo:message.Tipo}, nil
    }
 
    func (s*Server) ReceivedSeguimiento(ctx context.Context, message *Seguimiento)(*Seguimiento, error){
@@ -28,3 +28,5 @@ var codsum int32 =0
      Estado:"En Bodega",
      }, nil
    }
+
+  

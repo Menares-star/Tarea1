@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net"
-
+	//"fmt"
 	"google.golang.org/grpc"
 
 	"github.com/tutorialedge/go-grpc-tutorial/Mensajes"
@@ -26,4 +26,8 @@ func main() {
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %s", err)
 	}
+	//SEGUIMIENTOS
+	//FIN SEGUIMIENTOS
+	//COMUNICACION CON CAMIONES
+
 }
