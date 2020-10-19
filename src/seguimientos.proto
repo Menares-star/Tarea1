@@ -1,0 +1,11 @@
+syntax = "proto3";
+package seguimientos;
+
+message Seguimiento{
+ int32 Codigo=1;
+ string Estado=2;
+}
+
+service SeguimientoService {
+  rpc ReceivedSeguimiento(Seguimeinto) returns (Seguimiento) {}
+}

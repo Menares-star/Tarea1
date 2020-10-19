@@ -1,4 +1,4 @@
-id,producto,valor,tienda,destino
+#id,producto,valor,tienda,destino
 SA1554KF,Polera,10,tienda-A,casa-A
 SA1684AH,Pantalón,12,tienda-B,casa-B
 SA5698PO,Televisor,110,tienda-C,casa-C

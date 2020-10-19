@@ -9,8 +9,18 @@ message Orden{
  string Destino=5;
  int32 Prioridad=6;
  int32 Codigo=7;
+ string Tipo=8;
 }
 
 service OrdenService {
   rpc ReceivedOrden(Orden) returns (Orden) {}
+}
+
+message Seguimiento{
+ int32 Codigo=1;
+ string Estado=2;
+}
+
+service SeguimientoService {
+  rpc ReceivedSeguimiento(Seguimiento) returns (Seguimiento) {}
 }
