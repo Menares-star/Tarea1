@@ -23,10 +23,8 @@ var codsum int32 =0
    }
 
    func (s*Server) ReceivedSeguimiento(ctx context.Context, message *Seguimiento)(*Seguimiento, error){
-     log.Printf("Received message seguimiento from client: %i", message.Codigo)
+     log.Printf("Received message seguimiento from client: %d", message.Codigo)
      return &Seguimiento{Codigo:message.Codigo,
      Estado:"En Bodega",
      }, nil
    }
-
-  
