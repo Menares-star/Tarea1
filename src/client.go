@@ -36,7 +36,7 @@ func main() {
   fmt.Scan(&age)
  /* CONEXION*/
   var conn *grpc.ClientConn
-  conn, err := grpc.Dial(":9000", grpc.WithInsecure(), grpc.WithBlock())
+  conn, err := grpc.Dial("dist73:9000", grpc.WithInsecure(), grpc.WithBlock())
   if err != nil{
     log.Fatalf("could not connect: %s",err)
   }
