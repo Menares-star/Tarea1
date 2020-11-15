@@ -7,7 +7,8 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	"github.com/Menares-star/Tarea1/src"
+	"github.com/Menares-star/Tarea1/src/Mensajes"
+
 )
 
 type Server struct{
@@ -42,14 +43,14 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	s := ordenes.Server{}
+	s := Server{}
 
 	grpcServer := grpc.NewServer()
 
-	#REGISTRO DE SERVICIOS
-	ordenes.RegisterOrdenServiceServer(grpcServer, &s)
-	ordenes.RegisterSeguimientoServiceServer(grpcServer, &s)
-	#FIN REGISTRO DE SERVICIOS
+	//REGISTRO DE SERVICIOS
+	RegisterOrdenServiceServer(grpcServer, &s)
+	RegisterSeguimientoServiceServer(grpcServer, &s)
+	//FIN REGISTRO DE SERVICIOS
 
 
 	if err := grpcServer.Serve(lis); err != nil {
