@@ -9,7 +9,7 @@ import (
   "golang.org/x/net/context"
   "google.golang.org/grpc"
   "encoding/csv"
-	"github.com/Menares-star/Tarea1/src/Mensajes"
+	"github.com/Menares-star/Tarea1/src"
   "strconv"
   "math/rand"
 )
@@ -36,7 +36,7 @@ func main() {
   fmt.Scan(&age)
  /* CONEXION*/
   var conn *grpc.ClientConn
-  conn, err := grpc.Dial("dist73:7000", grpc.WithInsecure(), grpc.WithBlock())
+  conn, err := grpc.Dial(":7000", grpc.WithInsecure(), grpc.WithBlock())
   if err != nil{
     log.Fatalf("could not connect: %s",err)
   }
