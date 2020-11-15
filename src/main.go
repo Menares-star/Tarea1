@@ -20,7 +20,8 @@ func main() {
 
 	grpcServer := grpc.NewServer()
 
-	pb.RegisterOrdenesServer(grpcServer, &s)
+	ordenes.RegisterOrdenServiceServer(grpcServer, &s)
+	ordenes.RegisterSeguimientoServiceServer(grpcServer, &s)
 
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %s", err)
