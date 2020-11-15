@@ -1,4 +1,4 @@
-module github.com/tutorialedge/go-grpc-tutorial
+module github.com/Menares-star/Tarea1/src
 
 go 1.14
 
