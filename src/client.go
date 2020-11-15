@@ -9,7 +9,7 @@ import (
   "golang.org/x/net/context"
   "google.golang.org/grpc"
   "encoding/csv"
-	"github.com/Menares-star/Tarea1/src"
+	"github.com/Menares-star/Tarea1/src/Mensajes"
   "strconv"
   "math/rand"
 )

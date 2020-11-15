@@ -6,7 +6,7 @@ import (
 	//"fmt"
 	"google.golang.org/grpc"
 
-	"github.com/Menares-star/Tarea1/src"
+	pb "github.com/Menares-star/Tarea1/src/Mensajes"
 )
 
 func main() {
@@ -20,8 +20,7 @@ func main() {
 
 	grpcServer := grpc.NewServer()
 
-	ordenes.RegisterOrdenServiceServer(grpcServer, &s)
-	ordenes.RegisterSeguimientoServiceServer(grpcServer, &s)
+	pb.RegisterOrdenesServer(grpcServer, &s)
 
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %s", err)
